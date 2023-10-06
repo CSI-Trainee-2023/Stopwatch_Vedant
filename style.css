@@ -1,0 +1,83 @@
+html,body{
+    background: url("Stop_watch_image2.jpg") ; 
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 104vh;
+   background-size: 1500px;
+
+}
+.containerOfHourMinuteSecond{
+    color: aliceblue;
+}
+.dial{
+    font-size: 20px;
+    margin-top: 17%;
+}
+.clock{
+    font-size: 45px;
+    color: white;
+    
+}
+.txt{
+    font-size: 25px;
+    color:lightblue;
+}
+.button{
+     display: flex;
+     justify-content: center;
+}
+#start{
+    font-size: 20px;
+    margin-right: 40px;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+}
+#lap{
+    font-size: 20px;
+    margin-right: 40px;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    
+}
+    #lap:hover{
+        background-color: red;
+        color: aliceblue;
+    
+    }
+#start:hover{
+    background-color: red;
+    color: aliceblue;
+
+}
+.laps {
+    list-style: none;
+    color: white; 
+    height: 250px;
+    overflow: auto;
+    width: 80%;
+    position: absolute;
+    margin-top: 100px;
+    padding: 30px ;
+    margin-left: 920px;
+    }
+    
+    .lap-item {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    border: 1.5px solid #444;
+    border-radius: 50px; 
+    }
+    .time-stamp {
+    
+    display: flex;
+     margin-left: 25px; }
+    
