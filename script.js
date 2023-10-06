@@ -1,12 +1,8 @@
-var h=0;
-var m=0;
-var s=0;
-var c=0;
-var countt = 1;
+
 var button = document.getElementById("start"),
   count = 0;
 button.onclick = function() {
-  count += 1;
+  count =count+1;
   if(count%2 !=0){
     start();
   }
@@ -39,65 +35,68 @@ function stop(){
     document.getElementById("start").innerHTML="Start";
 
 }
+var hour=0;
+var minute=0;
+var second=0;
+var milisecond=0;
 
 function reset(){
     temp=false;
-    h=0;
-    m=0;
-    s=0;
-    c=0;
+    hour=0;
+    minute=0;
+    second=0;
+    milisecond=0;
     document.getElementById("msec").innerHTML="00";
     document.getElementById("sec").innerHTML="00";
     document.getElementById("min").innerHTML="00";
     document.getElementById("hr").innerHTML="00";
     document.getElementById("lap").innerHTML="Lap"; 
-
 }
 
 function stopwatch(){
     
     if(temp==true){
-        c+=1;
-        if(c>99){
-            s+=1;
-            c=0;
+        milisecond=milisecond+1;
+    if(milisecond==100){
+            second=second+1;
+            milisecond=0;
         }
-        if(s>60){
-            m+=1;
-            s=0;
-            c=0;
+    if(second==60){
+            minute=minute+1;
+            second=0;
+            milisecond=0;
         }
-        if(m>60){
-            h+=1;
-            s=0;
-            m=0;
-            c=0;
+    if(minute==60){
+            hour=hour+1;
+            second=0;
+            minute=0;
+            milisecond=0;
         }
-        var hstring=h;
-        var mstring=m;
-        var sstring=s;
-        var cstring=c;
-        if(h<10){
-            hstring="0"+ hstring;
+        var hourstring=hour;
+        var minutestring=minute;
+        var secondstring=second;
+        var milisecondstring=milisecond;
+    if(hour<10){
+            hourstring="0"+ hourstring;
         }
-        if(m<10){
-            mstring="0"+ mstring;
+    if(minute<10){
+            minutestring="0"+ minutestring;
         }
-        if(s<10){
-            sstring="0"+ sstring;
+    if(second<10){
+            secondstring="0"+ secondstring;
         }
-        if(c<10){
-            cstring="0"+ cstring;
+    if(milisecond<10){
+            milisecondstring="0"+ milisecondstring;
         }
-        document.getElementById("msec").innerHTML=cstring;
-        document.getElementById("sec").innerHTML=sstring;
-        document.getElementById("min").innerHTML=mstring;
-        document.getElementById("hr").innerHTML=hstring;
+        document.getElementById("msec").innerHTML=milisecondstring;
+        document.getElementById("sec").innerHTML=secondstring;
+        document.getElementById("min").innerHTML=minutestring;
+        document.getElementById("hr").innerHTML=hourstring;
     
         setTimeout(stopwatch,10)
     }
 }
-
+var countt = 1;
 function lap(){
   var laptime1 = `${document.getElementById("hr").innerHTML}:${document.getElementById("min").innerHTML}:${document.getElementById("sec").innerHTML}:${document.getElementById("msec").innerHTML}`;
   const laps = document.querySelector(".laps");
@@ -111,7 +110,8 @@ function lap(){
   li1.appendChild(d2);
   laps.appendChild(li1);
   countt++;
-
+localStorage.setItem('laps',laptime1);
+localStorage.getItem('laps',laptime1);
 }
 document.addEventListener('keydown', (event) => {
   if (event.ctrlKey) {
@@ -122,3 +122,4 @@ document.addEventListener('keydown', (event) => {
       
   }
 });
+
