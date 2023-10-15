@@ -8,6 +8,7 @@ html,body{
     align-items: center;
    height: 104vh;
    background-size: 93rem;
+   
 }
 .containerOfHourMinuteSecond{
     color: aliceblue;
@@ -17,7 +18,7 @@ html,body{
     margin-top: 17%;
 }
 .clock{
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     color: white;
     
 }
@@ -32,7 +33,7 @@ html,body{
 #start{
     font-size: 1.3rem;
     margin-right: 3rem;
-
+margin-left: 2.7rem;
     border-radius: 50%;
 }
 #lap{
@@ -74,10 +75,12 @@ html,body{
     border: 1.5px solid #444;
     border-radius: 50px; 
     }
-    .time-stamp {
     
+    .time-stamp {
     display: flex;
      margin-left: 25px; }
+
+
      @media (max-width: 1250px) {
         body{
             background-repeat: no-repeat;
@@ -85,12 +88,16 @@ html,body{
       .laps{
         margin-top: 40rem;
         margin-right: 55rem;
-        /* background: url("Stop_watch_image2.jpg") ; */
 
         height:80px;
         overflow:scroll;
+      }}
+      @media (max-width: 370px) {
+        .clock{
+            font-size:2.22rem;
+            
+        }
+        .txt{
+            font-size: 1.1rem;
+        }
       }
-       
-        
-     }
-    
